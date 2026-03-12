@@ -8,16 +8,20 @@
 
 <style>
 
-body{
+{
 margin:0;
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
-background:#020210;
-color:white;
-overflow-x:hidden;
-cursor:none;
+padding:0;
+box-sizing:border-box;
 }
 
-/* STAR BACKGROUND /
+body{
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
+background:#05051a;
+color:white;
+overflow-x:hidden;
+}
+
+/ STAR BACKGROUND /
 
 .stars{
 position:fixed;
@@ -27,8 +31,8 @@ background:
 radial-gradient(white 1px,transparent 1px),
 radial-gradient(white 1px,transparent 1px);
 background-size:3px 3px,2px 2px;
-opacity:0.25;
-z-index:-2;
+opacity:.25;
+z-index:-3;
 }
 
 / HERO /
@@ -37,57 +41,69 @@ z-index:-2;
 height:100vh;
 display:flex;
 flex-direction:column;
-align-items:center;
 justify-content:center;
+align-items:center;
 text-align:center;
-padding:40px;
+padding:30px;
 }
 
 .hero h1{
-font-size:48px;
-background:linear-gradient(90deg,#ff7ad9,#8c7bff);
+font-size:52px;
+font-weight:700;
+background:linear-gradient(90deg,#ff7acb,#8f7bff);
 -webkit-background-clip:text;
 color:transparent;
-margin:0;
+margin-bottom:20px;
 }
 
 .hero p{
 font-size:22px;
-opacity:.8;
+opacity:.85;
+}
+
+/ GLASS CARD /
+
+.card{
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(12px);
+border-radius:20px;
+padding:40px;
+margin:40px auto;
+max-width:700px;
+box-shadow:0 20px 40px rgba(0,0,0,.6);
 }
 
 / POEM /
 
 .poem{
-max-width:700px;
-margin:auto;
 text-align:center;
 font-size:22px;
-line-height:1.8;
-padding:60px 20px;
+line-height:1.9;
 }
 
 / GALLERY /
 
 .gallery{
+max-width:1100px;
+margin:auto;
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-padding:60px;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+padding:40px;
 }
 
 .gallery img{
 width:100%;
 border-radius:16px;
-transition:.4s;
-box-shadow:0 20px 40px rgba(0,0,0,.6);
+transition:.5s;
+box-shadow:0 20px 40px rgba(0,0,0,.7);
 }
 
 .gallery img:hover{
 transform:scale(1.08);
 }
 
-/ ROSES /
+/ ROSE ANIMATION /
 
 .rose{
 position:fixed;
@@ -105,18 +121,16 @@ animation:fall linear infinite;
 
 .cursor{
 position:fixed;
-width:20px;
-height:20px;
 pointer-events:none;
+font-size:22px;
 z-index:999;
-font-size:20px;
 }
 
-/ SCROLL ANIMATION /
+/ SCROLL FADE /
 
 .fade{
 opacity:0;
-transform:translateY(40px);
+transform:translateY(60px);
 transition:1s;
 }
 
@@ -141,7 +155,7 @@ transform:translateY(0);
 
 </section>
 
-<section class="poem fade">
+<div class="card poem fade">
 
 <p>Tumhari muskaan meri subah hai.</p>
 
@@ -153,7 +167,7 @@ transform:translateY(0);
 
 <p>Dil karta hai tum bas mere saamne ho ❤️</p>
 
-</section>
+</div>
 
 <section class="gallery fade">
 
@@ -185,20 +199,15 @@ cursor.style.top=e.clientY+"px"
 
 setInterval(()=>{
 const rose=document.createElement("div")
-
 rose.className="rose"
 rose.innerHTML="🌹"
-
 rose.style.left=Math.random()*100+"%"
 rose.style.animationDuration=4+Math.random()5+"s"
-
 document.body.appendChild(rose)
-
 setTimeout(()=>rose.remove(),9000)
-
 },400)
 
-/ SCROLL REVEAL */
+/ SCROLL FADE */
 
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
