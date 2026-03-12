@@ -1,10 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import img1 from "../assets/EA44F92F-246A-487D-9598-0A09AD9D55A8.jpeg";
-import img2 from "../assets/1EA59990-28C0-4B99-A685-5DB6D648F6D2.jpeg";
-import img3 from "../assets/FFF86EB0-CA55-4AE2-8A1A-F18F91070AD1.png";
-import img4 from "../assets/1B6DF615-FBE8-4EA1-B774-4917B05298ED.png";
+import img1 from "../assets/236D25F6-ADEB-4DCB-9652-1F690A45B227.png";
+import img2 from "../assets/4E71CD17-7744-4647-BC58-F2CB562CEF0D.png";
+import img3 from "../assets/8C318060-AB2D-4FB3-BDBC-076BEEB0FB33.png";
+import img4 from "../assets/941FD73C-BD49-4E10-B329-95BFF2F31804.png";
 
 export default function Hero(){
   return (
