@@ -1,0 +1,21 @@
+body{
+background: linear-gradient(
+270deg,
+#ff758c,
+#ff7eb3,
+#8a2be2
+);
+
+background-size:600% 600%;
+
+animation: gradientMove 15s ease infinite;
+
+font-family: 'Poppins', sans-serif;
+color:white;
+}
+
+@keyframes gradientMove{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
